@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC  -std=c++1y -g -shared -Wl,-soname,liblib2.so -o liblib2.so CMakeFiles/lib2.dir/src2/lib2.cpp.o 

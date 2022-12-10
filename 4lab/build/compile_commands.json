@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/denis/home/OCI/4lab/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/src/4lab.cpp.o -c /home/denis/home/OCI/4lab/src/4lab.cpp",
+  "file": "/home/denis/home/OCI/4lab/src/4lab.cpp"
+},
+{
+  "directory": "/home/denis/home/OCI/4lab/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/child1.dir/src/child1.cpp.o -c /home/denis/home/OCI/4lab/src/child1.cpp",
+  "file": "/home/denis/home/OCI/4lab/src/child1.cpp"
+},
+{
+  "directory": "/home/denis/home/OCI/4lab/build",
+  "command": "/usr/bin/g++   -g -o CMakeFiles/child2.dir/src/child2.cpp.o -c /home/denis/home/OCI/4lab/src/child2.cpp",
+  "file": "/home/denis/home/OCI/4lab/src/child2.cpp"
+}
+]

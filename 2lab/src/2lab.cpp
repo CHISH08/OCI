@@ -16,6 +16,34 @@ void reverseStr(string &str)
     }
 }
 
+void wrt_fd(int *fd1, int *fd2, string name_file)
+{
+    ifstream file1(name_file);
+    string line;
+    if (file1.is_open()) {
+        while (getline(file1, line)) {
+            line = line + "\n";
+            int lineSize = line.length();
+            if (lineSize > 10) {
+                if (write(fd2[1], line.c_str(), lineSize * sizeof(char)) == -1)
+                {
+                    cout << "An error ocurred with writing to the pipe2\n";
+                    return;
+                }
+            }
+            else
+            {
+                if (write(fd1[1], line.c_str(), lineSize * sizeof(char)) == -1)
+                {
+                    cout << "An error ocurred with writing to the pipe1\n";
+                    return;
+                }
+            }
+        }
+    }
+    file1.close();
+}
+
 int main(int argc, char *argv[])
 {
     setlocale(LC_ALL, "Russian");
@@ -48,67 +76,16 @@ int main(int argc, char *argv[])
     }
     else if (id2 != 0 && id != 0)
     {
+        close(fd1[0]);
+        close(fd2[0]);
         char *name_file1;
         char *name_file2;
         string line;
         // cin >> name_file1 >> name_file2;
-        int file1 = open("./file1.txt", O_RDONLY);
-        dup2(file1, STDIN_FILENO);
-        if (file1 != -1)
-        {
-            while (getline(cin, line))
-            {
-                line = line + '\n';
-                int lineSize = line.length();
-                if (lineSize > 10)
-                {
-                    if (write(fd2[1], line.c_str(), lineSize * sizeof(char)) == -1)
-                    {
-                        cout << "An error ocurred with writing to the pipe2\n";
-                        return 3;
-                    }
-                }
-                else
-                {
-                    if (write(fd1[1], line.c_str(), lineSize * sizeof(char)) == -1)
-                    {
-                        cout << "An error ocurred with writing to the pipe1\n";
-                        return 4;
-                    }
-                }
-            }
-            close(fd1[1]);
-            close(fd2[1]);
-        }
-        int file2 = open("./file2.txt", O_RDONLY);
-        dup2(file2, STDIN_FILENO);
-        if (file2 != -1)
-        {
-            close(fd1[0]);
-            close(fd2[0]);
-            while (getline(cin, line))
-            {
-                int lineSize = line.length();
-                if (lineSize > 10)
-                {
-                    if (write(fd2[1], line.c_str(), lineSize * sizeof(char)) == -1)
-                    {
-                        cout << "An error ocurred with writing to the pipe2\n";
-                        return 3;
-                    }
-                }
-                else
-                {
-                    if (write(fd1[1], line.c_str(), lineSize * sizeof(char)) == -1)
-                    {
-                        cout << "An error ocurred with writing to the pipe1\n";
-                        return 4;
-                    }
-                }
-            }
-            close(fd1[1]);
-            close(fd2[1]);
-        }
+        wrt_fd(fd1, fd2, "./file1.txt");
+        wrt_fd(fd1, fd2, "./file2.txt");
+        close(fd1[1]);
+        close(fd2[1]);
     }
     else if (flag)
     {

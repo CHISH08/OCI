@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/home/denis/home/OCI/5lab/build",
+  "command": "/usr/bin/g++ -Dlib1_EXPORTS -I/home/denis/home/OCI/5lab/build -I/home/denis/home/OCI/5lab -I/home/denis/home/OCI/5lab/include  -std=c++1y -g -fPIC -o CMakeFiles/lib1.dir/src2/lib1.cpp.o -c /home/denis/home/OCI/5lab/src2/lib1.cpp",
+  "file": "/home/denis/home/OCI/5lab/src2/lib1.cpp"
+},
+{
+  "directory": "/home/denis/home/OCI/5lab/build",
+  "command": "/usr/bin/g++ -Dlib2_EXPORTS -I/home/denis/home/OCI/5lab/build -I/home/denis/home/OCI/5lab -I/home/denis/home/OCI/5lab/include  -std=c++1y -g -fPIC -o CMakeFiles/lib2.dir/src2/lib2.cpp.o -c /home/denis/home/OCI/5lab/src2/lib2.cpp",
+  "file": "/home/denis/home/OCI/5lab/src2/lib2.cpp"
+},
+{
+  "directory": "/home/denis/home/OCI/5lab/build",
+  "command": "/usr/bin/g++  -I/home/denis/home/OCI/5lab/include -I/home/denis/home/OCI/5lab/build  -std=c++1y -g -o CMakeFiles/5lab.dir/src2/lib1.cpp.o -c /home/denis/home/OCI/5lab/src2/lib1.cpp",
+  "file": "/home/denis/home/OCI/5lab/src2/lib1.cpp"
+},
+{
+  "directory": "/home/denis/home/OCI/5lab/build",
+  "command": "/usr/bin/g++  -I/home/denis/home/OCI/5lab/include -I/home/denis/home/OCI/5lab/build  -std=c++1y -g -o CMakeFiles/5lab.dir/src2/lib2.cpp.o -c /home/denis/home/OCI/5lab/src2/lib2.cpp",
+  "file": "/home/denis/home/OCI/5lab/src2/lib2.cpp"
+},
+{
+  "directory": "/home/denis/home/OCI/5lab/build",
+  "command": "/usr/bin/g++  -I/home/denis/home/OCI/5lab/include -I/home/denis/home/OCI/5lab/build  -std=c++1y -g -o CMakeFiles/5lab.dir/src2/main2.cpp.o -c /home/denis/home/OCI/5lab/src2/main2.cpp",
+  "file": "/home/denis/home/OCI/5lab/src2/main2.cpp"
+}
+]

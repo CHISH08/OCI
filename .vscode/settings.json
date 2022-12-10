@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "iosfwd": "cpp",
+        "iostream": "cpp"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/4lab"
+}

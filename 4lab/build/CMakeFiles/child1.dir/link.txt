@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/child1.dir/src/child1.cpp.o -o child1 

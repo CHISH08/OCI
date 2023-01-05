@@ -1,5 +1,0 @@
-/home/denis/home/OCI/4lab/build/CMakeFiles/main.dir
-/home/denis/home/OCI/4lab/build/CMakeFiles/child1.dir
-/home/denis/home/OCI/4lab/build/CMakeFiles/child2.dir
-/home/denis/home/OCI/4lab/build/CMakeFiles/edit_cache.dir
-/home/denis/home/OCI/4lab/build/CMakeFiles/rebuild_cache.dir

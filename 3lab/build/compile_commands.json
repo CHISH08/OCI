@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/denis/home/OCI/3lab/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/main.dir/src/3lab.cpp.o -c /home/denis/home/OCI/3lab/src/3lab.cpp",
-  "file": "/home/denis/home/OCI/3lab/src/3lab.cpp"
-}
-]

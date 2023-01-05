@@ -20,14 +20,14 @@ configure_file(
     "${PROJECT_BINARY_DIR}/version.h"
 )
 include(GenerateExportHeader)
-add_library(lib1 SHARED "${PROJECT_SOURCE_DIR}/src2/lib1.cpp" "${PROJECT_SOURCE_DIR}/include/math1.h")
-generate_export_header(lib1)
-target_include_directories(lib1 PUBLIC ${PROJECT_BINARY_DIR} ${PROJECT_SOURCE_DIR})
+add_library(1 SHARED "${PROJECT_SOURCE_DIR}/src2/lib1.cpp" "${PROJECT_SOURCE_DIR}/include/math1.h")
+generate_export_header(1)
+target_include_directories(1 PUBLIC ${PROJECT_BINARY_DIR} ${PROJECT_SOURCE_DIR})
 
 include(GenerateExportHeader)
-add_library(lib2 SHARED "${PROJECT_SOURCE_DIR}/src2/lib2.cpp" "${PROJECT_SOURCE_DIR}/include/math2.h")
-generate_export_header(lib2)
-target_include_directories(lib2 PUBLIC ${PROJECT_BINARY_DIR} ${PROJECT_SOURCE_DIR})
+add_library(2 SHARED "${PROJECT_SOURCE_DIR}/src2/lib2.cpp" "${PROJECT_SOURCE_DIR}/include/math2.h")
+generate_export_header(2)
+target_include_directories(2 PUBLIC ${PROJECT_BINARY_DIR} ${PROJECT_SOURCE_DIR})
 
 include_directories("${PROJECT_SOURCE_DIR}/include")
 include_directories("${PROJECT_BINARY_DIR}")

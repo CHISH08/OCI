@@ -1,1 +1,0 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/main.dir/src/2lab.cpp.o -o main 

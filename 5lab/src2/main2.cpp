@@ -15,9 +15,9 @@ int main(int argc, char *argv[]){
     } else {
         if (*argv[1] == '1') {
             void * lib;
-            lib = dlopen("liblib1.so", RTLD_LAZY);
+            lib = dlopen("/home/denis/home/OCI/5lab/build/lib1.so", RTLD_LAZY);
             if (!lib) {
-                perror("cannot open library\n");
+                perror("cannot open library1\n");
                 exit(0);
             }
             if ((argc % 2) != 0) {
@@ -61,9 +61,9 @@ int main(int argc, char *argv[]){
             }
             else {
                 void * lib;
-                lib = dlopen("liblib2.so", RTLD_LAZY);
+                lib = dlopen("/home/denis/home/OCI/5lab/build/lib2.so", RTLD_LAZY);
                 if (!lib) {
-                    perror("cannot open library\n");
+                    perror("cannot open library2\n");
                     exit(0);
                 }
                 int glob = 1;

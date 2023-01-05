@@ -1,5 +1,0 @@
-/home/denis/home/OCI/5lab/build/CMakeFiles/lib1.dir
-/home/denis/home/OCI/5lab/build/CMakeFiles/lib2.dir
-/home/denis/home/OCI/5lab/build/CMakeFiles/5lab.dir
-/home/denis/home/OCI/5lab/build/CMakeFiles/edit_cache.dir
-/home/denis/home/OCI/5lab/build/CMakeFiles/rebuild_cache.dir

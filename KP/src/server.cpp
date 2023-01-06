@@ -67,10 +67,7 @@ int main(){
         std::vector<std::string> msg2;
         // split(mes2, " ", msg2);
         // std::cout << mes2 << "\n";
-        // if (msg2[0] == "join" || msg2[0] == "create" || msg2[0] == "kill") {
-            // msg = msg2;
-            // fl = 0;
-        // } else if (mes2 != "" && find(play.begin(), play.end(), mes2) == play.end()) {
+        // if (mes2 != "" && find(play.begin(), play.end(), mes2) == play.end()) {
             // play.push_back(mes2);
             // sock4.send(zmq::buffer(std::to_string((play.size()-1)*2)), zmq::send_flags::none);
         // }

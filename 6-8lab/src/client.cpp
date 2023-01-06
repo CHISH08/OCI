@@ -49,29 +49,21 @@ int main(){
             int time;
             std::cin >> time;
             for (int i = 0; i <= 2; ++i) {
-                for (int child = 0; child < treee.size(); ++child) {
-                    if(!tree.exist(treee[child])){
-                        std::cout << "";
-                        // std::cout << "(" << treee[child] << ") => Heartbit: node id is unavailable now\n";
+                for (int childC = 0; childC < treee.size(); ++childC) {
+                    if(!tree.exist(treee[childC])){
+                        std::cout << "Error: child is not existed!\n";
                     }
-                    else if(node.leftId == treee[child] || node.rightId == treee[child]){
-                        answer = node.Ping(treee[child]);
-                        std::cout << "(" << treee[child] << ") => " << answer << std::endl;
+                    else if(node.leftId == treee[childC] || node.rightId == treee[childC]){
+                        answer = node.Ping(treee[childC]);
+                        std::cout << "(" << treee[childC] << ") => " << answer << std::endl;
                     }
                     else{
-                        struct timeval stop, start;
-                        gettimeofday(&start, NULL);
-                        std::string message = "ping " + std::to_string(treee[child]);
-                        while ((stop.tv_sec - start.tv_sec) * 1000 <= 4*time) {
-                            gettimeofday(&stop, NULL);
-                            answer = node.sendStr(message, treee[child]);
-                            if(answer == "Error: id is not found"){
-                                answer = "OK: 0";
-                            } else {
-                                break;
-                            }
+                        std::string message = "ping " + std::to_string(treee[childC]);
+                        answer = node.sendStr(message, treee[childC]);
+                        if(answer == "Error: id is not found"){
+                            answer = "OK: 0";
                         }
-                        std::cout << "(" << treee[child] << ") => " << answer << std::endl;
+                        std::cout << "(" << treee[childC] << ") => " << answer << std::endl;
                     }
                 }
                 usleep(time);

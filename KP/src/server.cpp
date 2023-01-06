@@ -144,27 +144,20 @@ int main(){
             } else if (command == "heartbit"){
                 int time;
                 std::cin >> time;
-                for (int i = 0; i <= 10; ++i) {
+                for (int i = 0; i <= 2; ++i) {
                     for (int childC = 0; childC < treee.size(); ++childC) {
                         if(!tree.exist(treee[childC])){
-                            std::cout << "";
-                            // std::cout << "(" << treee[child] << ") => Heartbit: node id is unavailable now\n";
+                            std::cout << "Error: child is not existed!\n";
                         }
                         else if(node.leftId == treee[childC] || node.rightId == treee[childC]){
                             answer = node.Ping(treee[childC]);
-                            std::cout << "(" << treee[childC] << ") => " << answer << std::endl;
+                            std::cout << answer << std::endl;
                         }
                         else{
-                            struct timeval stop, start;
-                            gettimeofday(&start, NULL);
-                            answer = "Heartbit: node id is unavailable now\n";
                             std::string message = "ping " + std::to_string(treee[childC]);
-                            while ((answer == "Heartbit: node id is unavailable now\n") && ((stop.tv_sec - start.tv_sec) * 1000 <= 4*time)) {
-                                gettimeofday(&stop, NULL);
-                                answer = node.sendStr(message, treee[childC]);
-                                if(answer == "Error: id is not found"){
-                                    answer = "OK: 0";
-                                }
+                            answer = node.sendStr(message, treee[childC]);
+                            if(answer == "Error: id is not found"){
+                                answer = "OK: 0";
                             }
                             std::cout << "(" << treee[childC] << ") => " << answer << std::endl;
                         }

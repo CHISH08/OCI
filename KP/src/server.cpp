@@ -127,7 +127,6 @@ int main(){
                             }
                             else{
                                 tree.addElem(child, idParent);
-                                treee.push_back(child);
                                 break;
                             }
                         }
@@ -233,6 +232,14 @@ int main(){
                     std::cout << "Error: child is not existed!\n";
                 }else{
                     answer = node.sendStr(message, child);
+                    int p;
+                    for (p = 0; p < treee.size(); ++p) {
+                        if (treee[p] == child) {
+                            break;
+                        }
+                    }
+                    playT.erase(std::remove(playT.begin(), playT.end(), playT[p]), playT.end());
+                    playC.erase(std::remove(playC.begin(), playC.end(), playC[p]), playC.end());
                     if(answer != "Error: id is not found"){
                         treee.erase(std::remove(treee.begin(), treee.end(), child), treee.end());
                         tree.Remove(child);

@@ -8,4 +8,4 @@ client:
 server:
 	$(CC) ./src/server.cpp $(FINALFLAGS) server
 clean:
-	rm -r ./client ./server
+	rm -r -f ./client ./server

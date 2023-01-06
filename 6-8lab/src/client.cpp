@@ -39,7 +39,6 @@ int main(){
                         }
                         else{
                             tree.addElem(child, idParent);
-                            treee.push_back(child);
                             break;
                         }
                     }
@@ -49,7 +48,7 @@ int main(){
         } else if (command == "heartbit"){
             int time;
             std::cin >> time;
-            for (int i = 0; i <= 10; ++i) {
+            for (int i = 0; i <= 2; ++i) {
                 for (int child = 0; child < treee.size(); ++child) {
                     if(!tree.exist(treee[child])){
                         std::cout << "";
@@ -62,13 +61,14 @@ int main(){
                     else{
                         struct timeval stop, start;
                         gettimeofday(&start, NULL);
-                        answer = "Heartbit: node id is unavailable now\n";
                         std::string message = "ping " + std::to_string(treee[child]);
-                        while ((answer == "Heartbit: node id is unavailable now\n") && ((stop.tv_sec - start.tv_sec) * 1000 <= 4*time)) {
+                        while ((stop.tv_sec - start.tv_sec) * 1000 <= 4*time) {
                             gettimeofday(&stop, NULL);
                             answer = node.sendStr(message, treee[child]);
                             if(answer == "Error: id is not found"){
                                 answer = "OK: 0";
+                            } else {
+                                break;
                             }
                         }
                         std::cout << "(" << treee[child] << ") => " << answer << std::endl;
@@ -115,8 +115,8 @@ int main(){
                 std::cout << "Error: child is not existed!\n";
             }else{
                 answer = node.sendStr(message, child);
+                treee.erase(std::remove(treee.begin(), treee.end(), child), treee.end());
                 if(answer != "Error: id is not found"){
-                    treee.erase(std::remove(treee.begin(), treee.end(), child), treee.end());
                     tree.Remove(child);
                     if(child == node.leftId){
                         unbind(node.left, node.leftPort);
